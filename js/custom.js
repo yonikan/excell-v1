@@ -1,17 +1,15 @@
-/* Author:WebThemez
- * Author URI:http://webthemez.com
- * License: Creative Commons Attribution 3.0 License (https://creativecommons.org/licenses/by/3.0/)
- */
 
 (function($){
 	$(document).ready(function(){
-	
+
+
+		// Background Strech -----------------------------------------------
 		$(".banner-image").backstretch('images/banner.jpg');
-		
-		// Fixed header
-		//-----------------------------------------------
+
+
+		// Fixed header -----------------------------------------------
 		$(window).scroll(function() {
-			if (($(".header.fixed").length > 0)) { 
+			if (($(".header.fixed").length > 0)) {
 				if(($(this).scrollTop() > 0) && ($(window).width() > 767)) {
 					$("body").addClass("fixed-header-on");
 				} else {
@@ -21,7 +19,7 @@
 		});
 
 		$(window).load(function() {
-			if (($(".header.fixed").length > 0)) { 
+			if (($(".header.fixed").length > 0)) {
 				if(($(this).scrollTop() > 0) && ($(window).width() > 767)) {
 					$("body").addClass("fixed-header-on");
 				} else {
@@ -29,23 +27,24 @@
 				}
 			};
 		});
-		
-	   $('#quote-carousel').carousel({
-		 pause: true,
-		 interval: 4000,
-	   });
-		//Scroll Spy
-		//-----------------------------------------------
+
+	  $('#quote-carousel').carousel({
+	  	 pause: true,
+		   interval: 4000,
+	  });
+
+
+		//Scroll Spy -----------------------------------------------
 		if($(".scrollspy").length>0) {
 			$("body").addClass("scroll-spy");
-			$('body').scrollspy({ 
+			$('body').scrollspy({
 				target: '.scrollspy',
 				offset: 152
 			});
 		}
 
-		//Smooth Scroll
-		//-----------------------------------------------
+
+		//Smooth Scroll -----------------------------------------------
 		if ($(".smooth-scroll").length>0) {
 			$('.smooth-scroll a[href*=#]:not([href=#]), a[href*=#]:not([href=#]).smooth-scroll').click(function() {
 				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -61,8 +60,8 @@
 			});
 		}
 
-		// Animations
-		//-----------------------------------------------
+
+		// Animations -----------------------------------------------
 		if (($("[data-animation-effect]").length>0) && !Modernizr.touch) {
 			$("[data-animation-effect]").each(function() {
 				var $this = $(this),
@@ -79,8 +78,8 @@
 			});
 		};
 
-		// Isotope filters
-		//-----------------------------------------------
+
+		// Isotope filters -----------------------------------------------
 		if ($('.isotope-container').length>0) {
 			$(window).load(function() {
 				$('.isotope-container').fadeIn();
@@ -101,13 +100,14 @@
 			});
 		};
 
-		//Modal
-		//-----------------------------------------------
+
+		//Modal -----------------------------------------------
 		if($(".modal").length>0) {
 			$(".modal").each(function() {
 				$(".modal").prependTo( "body" );
 			});
 		}
+
 
 	}); // End document ready
 })(this.jQuery);
